@@ -1,9 +1,14 @@
 ---
 name: conventional-commit
-description: Creates git commits following Conventional Commits. Use when the user asks to commit, write a commit message, stage and commit, or organize commits before pushing.
+description: Creates git commits following Conventional Commits. Use when the user asks to commit, write a commit message, stage and commit, organize semantic commits, or clean up commits before pushing.
+disable-model-invocation: true
+compatibility: opencode
+metadata:
+  workflow: git
+  spec: https://www.conventionalcommits.org/
 ---
 
-# Conventional Commit (Claude Code)
+# Conventional Commit
 
 Create commits that follow [Conventional Commits](https://www.conventionalcommits.org/).
 

@@ -17,12 +17,13 @@ npm start
 
 | Provider | Directory | Skills path |
 |----------|-----------|-------------|
-| Cursor | `.cursor/` | `.cursor/skills/` |
-| Claude (cloud) | `.claude/` | `.claude/skills/` |
-| OpenCode | `.opencode/` | `.opencode/skills/` |
-| Codex | `.agents/` | `.agents/skills/` |
+| Canonical | `.ai/` | `.ai/skills/` |
+| Cursor | `.cursor/` | `.cursor/skills/` → `.ai/skills/` |
+| Claude (cloud) | `.claude/` | `.claude/skills/` → `.ai/skills/` |
+| OpenCode | `.opencode/` | `.opencode/skills/` → `.ai/skills/` |
+| Codex | `.agents/` | `.agents/skills/` → `.ai/skills/` |
 
-Each provider has a `conventional-commit` skill for creating git commits following [Conventional Commits](https://www.conventionalcommits.org/).
+Shared skills live under `.ai/skills/`. Each provider’s `skills/<name>` is a symlink to the canonical copy (e.g. `conventional-commit` for [Conventional Commits](https://www.conventionalcommits.org/)).
 
 ## Invoking the commit skill
 
