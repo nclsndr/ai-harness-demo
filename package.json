@@ -6,11 +6,15 @@
   "type": "module",
   "scripts": {
     "build": "tsgo",
-    "typecheck": "tsgo --noEmit",
-    "start": "node dist/index.js"
+    "setup": "tsx scripts/ai-agent-setup.ts",
+    "typecheck": "tsgo --noEmit && tsgo --noEmit -p tsconfig.scripts.json",
+    "start": "node dist/index.js",
+    "ai-agent-setup": "tsx scripts/ai-agent-setup.ts"
   },
   "devDependencies": {
+    "@types/node": "^24.0.0",
     "@typescript/native-preview": "^7.0.0-dev.20260603.1",
+    "tsx": "^4.20.3",
     "typescript": "^6.0.3"
   }
 }

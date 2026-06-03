@@ -13,21 +13,20 @@ npm run build
 npm start
 ```
 
-## Provider layout
+## AI agent resources
 
 | Provider | Directory | Skills path |
 |----------|-----------|-------------|
-| Canonical | `.ai/` | `.ai/skills/` |
-| Cursor | `.cursor/` | `.cursor/skills/` → `.ai/skills/` |
-| Claude (cloud) | `.claude/` | `.claude/skills/` → `.ai/skills/` |
-| OpenCode | `.opencode/` | `.opencode/skills/` → `.ai/skills/` |
-| Codex | `.agents/` | `.agents/skills/` → `.ai/skills/` |
+| Canonical (committed) | `.ai/` | `.ai/skills/` |
+| Cursor (generated) | `.cursor/` | `.cursor/skills/` → `.ai/skills/` |
+| Claude (generated) | `.claude/` | `.claude/skills/` → `.ai/skills/` |
+| OpenCode (generated) | `.opencode/` | `.opencode/skills/` → `.ai/skills/` |
+| Codex (generated) | `.agents/` | `.agents/skills/` → `.ai/skills/` |
 
-Shared skills live under `.ai/skills/`. Each provider’s `skills/<name>` is a symlink to the canonical copy (e.g. `conventional-commit` for [Conventional Commits](https://www.conventionalcommits.org/)).
+Shared skills live under `.ai/skills/`. Provider directories are gitignored and recreated locally:
 
-## Invoking the commit skill
+```bash
+npm run ai-agent-setup
+```
 
-- **Cursor**: ask to commit using the conventional-commit skill, or `/conventional-commit`
-- **Claude Code**: invoke the skill when asked to commit
-- **OpenCode**: `$conventional-commit` or implicit match on commit requests
-- **Codex**: `$conventional-commit` or implicit match on commit requests
+This symlinks every skill under `.ai/skills/` into each provider’s `skills/` folder (e.g. `conventional-commit` for [Conventional Commits](https://www.conventionalcommits.org/)).
